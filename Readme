@@ -1,0 +1,36 @@
+TLDR 
+zigbee based energy monitorying system.
+A gateway deivce (ESBOX) gets sent data from each zigbee meter attached to the network. 
+The ESbox packages the  data to a JSON message, and sends it to the listed web server.
+The Listed web server waits for ES box to reach out, then receves the JSON and closes the connection, ready for the next message.
+
+hardware:
+- zigbee energy meter
+- zigbee-ethernet gateway (from here on known as 'ES box')
+- VM running pyhton twisted web server
+
+software 
+- zigbee-ethernet gateway runs software that packages the data and sends it on its way.
+
+
+
+More indepth.
+
+The EX box sends a "config" to the energy meter over zigbee with its reporting paramaters, (time, if change is X then report, etc etc).
+The ES box then recives readings from the meter and stores it locally in a DB ready to be sent to the server.
+The ES box reaches out to the server every 'X' time, and if everything is "ok" it sends the message(s) to the server.
+If more then 1 energy meter is connected to the ESbox, the readings will be sent in a new message.
+
+The example server "twisted_server" is a basic script using twsited internet to wait for an ES box to check in.
+Once a connection request is receved, it will:
+  confirm that it receved it.
+  send any updated configeration files (if any).
+  request the latest readings.
+ 
+Once readings are recived, it will close the connection, and wait for the next message. 
+The 'twisted_server.py' imports 'messages8344' as the instructions, these are needed to communicate with the ES box.
+
+The end goal is to receve the JASON data, and put it in a time series DB,(influx), 
+Idealy, handle the data in such a way that mutiple ES boxes with mutiple meters can communicate with the server, and have the data stored correctly.
+
+See file, raw Json for a output of the script, and a raw JSON message.
