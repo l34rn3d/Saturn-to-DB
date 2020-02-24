@@ -2,7 +2,7 @@ TLDR
 zigbee based energy monitorying system.
 A gateway deivce (ESBOX) gets sent data from each zigbee meter attached to the network. 
 The ESbox packages the  data to a JSON message, and sends it to the listed web server.
-The Listed web server waits for ES box to reach out, then receves the JSON and closes the connection, ready for the next message.
+The Listed web server waits for ES box to reach out, receves the JSON and closes the connection, ready for the next message.
 
 hardware:
 - zigbee energy meter
@@ -16,7 +16,7 @@ software
 
 More indepth.
 
-The EX box sends a "config" to the energy meter over zigbee with its reporting paramaters, (time, if change is X then report, etc etc).
+The ES box sends a "config" to the energy meter over zigbee with its reporting paramaters, (time, if change is X then report, etc etc).
 The ES box then recives readings from the meter and stores it locally in a DB ready to be sent to the server.
 The ES box reaches out to the server every 'X' time, and if everything is "ok" it sends the message(s) to the server.
 If more then 1 energy meter is connected to the ESbox, the readings will be sent in a new message.
