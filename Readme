@@ -32,5 +32,15 @@ The 'twisted_server.py' imports 'messages8344' as the instructions, these are ne
 
 The end goal is to receve the JASON data, and put it in a time series DB,(influx), 
 Idealy, handle the data in such a way that mutiple ES boxes with mutiple meters can communicate with the server, and have the data stored correctly.
+-Data to be entered to DB as follows.
+  -ESbox serial
+    -xyz
+  -Meter IEEE (mac address)
+    -abc
+  -Readings
+    -Volts
+    -Amps
+    -etc, etc
+
 
 See file, raw Json for a output of the script, and a raw JSON message.
