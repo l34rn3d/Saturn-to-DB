@@ -1,0 +1,40 @@
+Raw JSON message
+
+Sent following message to ESBox: {'PVer': '1.1', 'Msgs': [{'M': 'Close', 'Cl': {'I': 0, 'M': 4278}}]}
+
+{u'Tm': 2961722568, u'PVer': u'1.1', u'EVer': u'SS9002.1.2_13270_13017_5651_?_?', u'Msgs': [{u'M': u'NFM', u'Cl': {u'I': 0, u'M': 4278}}], u'Auth': [u'001BC502B0104423', u'1CAB941DB1F7B58B19A6ED70E32C6D33']}
+
+Requesting latest readings.
+
+Sent following message to ESBox: {'PVer': '1.1', 'Msgs': [{'Src': 'L', 'M': 'GD', 'Cl': {'I': 0, 'M': 4278}}]}
+
+{u'Tm': 2961722569, u'PVer': u'1.1', u'EVer': u'SS9002.1.2_13270_13017_5651_?_?', u'Msgs': [{u'Src': u'L', u'M': u'SendData', u'D':[{u'EP': 10, u'HAN': u'001BC502B0102AA3', u'Cls': [{u'Ats': [{u'I': 57610, u'Tm': 2961722547, u'D': 24409, u'Tp': u'u'}, {u'I': 57628, u'Tm': 2961722547, u'D': 870, u'Tp': u'u'}, {u'I': 57646, u'Tm': 2961722547, u'D': 2081, u'Tp': u'i'}, {u'I': 57649, u'Tm': 2961722547, u'D': -426, u'Tp': u'i'}, {u'I': 57655, u'Tm': 2961722547, u'D': 979, u'Tp': u'i'}, {u'I': 57664, u'Tm': 2961722547, u'D': 1330614, u'Tp': u'i'}, {u'I': 57665, u'Tm': 2961722547, u'D': 179, u'Tp': u'i'}, {u'I': 57667, u'Tm': 2961722547, u'D': 4999, u'Tp': u'u'}, {u'I': 57676, u'Tm': 2961722547, u'D': 3250, u'Tp': u'i'}, {u'I': 57721, u'Tm': 2961722547, u'D': 0, u'Tp': u'i'}, {u'I': 57722, u'Tm': 2961722547, u'D': 874284, u'Tp': u'i'}], u'Cl': {u'I': 1794, u'M': 0}}]}], u'Cl': {u'I': 0, u'M': 4278}}], u'Auth':[u'001BC502B0104423', u'1CAB941DB1F7B58B19A6ED70E32C6D33']}
+Closing connection to ESBox.
+
+
+
+
+
+Formated Json message
+--ES box infomation from ES box
+{u'Tm': 2961722579, u'PVer': u'1.1', u'EVer': u'SS9002.1.2_13270_13017_5651_?_?', u'Msgs': 
+--message to ES box
+[{u'Src': u'L', u'M': u'SendData', u'D':
+--message back to server
+  --meter MAC address
+    [{u'EP': 10, u'HAN': u'001BC502B0102AA3', u'Cls': 
+  -- readings (attributes) 
+       [{u'Ats': [
+	      {u'I': 57610, u'Tm': 2961722578, u'D': 24429, u'Tp': u'u'}, 
+    	  {u'I': 57628, u'Tm': 2961722578, u'D': 862, u'Tp': u'u'}, 
+      	{u'I': 57646, u'Tm': 2961722578, u'D': 2063, u'Tp': u'i'}, 
+      	{u'I': 57649, u'Tm': 2961722578, u'D': -429, u'Tp': u'i'}, 
+      	{u'I': 57655, u'Tm': 2961722578, u'D': 978, u'Tp': u'i'}, 
+	      {u'I': 57664, u'Tm': 2961722578, u'D': 1330631, u'Tp': u'i'}, 
+      	{u'I': 57665, u'Tm': 2961722578, u'D': 179, u'Tp': u'i'}, 
+      	{u'I': 57667, u'Tm': 2961722578, u'D': 4999, u'Tp': u'u'}, 
+       	{u'I': 57676, u'Tm': 2961722578, u'D': 3254, u'Tp': u'i'}, 
+      	{u'I': 57721, u'Tm': 2961722578, u'D': 0, u'Tp': u'i'}, 
+      	{u'I': 57722, u'Tm': 2961722578, u'D': 874287, u'Tp': u'i'}],
+   -- authentication
+        u'Cl': {u'I': 1794, u'M': 0}}]}], u'Cl': {u'I': 0, u'M': 4278}}], u'Auth':[u'001BC502B0104423', u'1CAB941DB1F7B58B19A6ED70E32C6D33']}
