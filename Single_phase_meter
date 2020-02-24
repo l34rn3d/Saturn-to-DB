@@ -1,0 +1,62 @@
+8 Device Clusters and Attributes 
+
+    The following Clusters are supported in SSLC release of the SS9007 Mini CT Meter: 
+    - Basic 
+    - On/Off 
+    - Simple Metering 
+
+    This section lists the available attributes in each supported cluster. 
+    A maximum of 11 attributes can be configured for reporting at once. There is only one timer for attribute reports, and attributes will be reported at the interval specified in the most recent report configuration message. 
+    Because ZigBee attributes have a variable size however, it may not be possible for a device to send 11 attributes in a single report.
+    
+    If the total size of the report exceeds the maximum payload size (60 bytes), some attributes will be excluded from the report. The device will not automatically follow up with the remaining attributes if this is the case, and any missing attributes must be requested separately. 
+
+8.1 Basic Cluster 
+    Cluster ID:         0x0000 (0) 
+    Manufacturer ID:    0x0000 (0) 
+
+        Attr ID, Attr ID (Hex), Attribute Name, Writeable.
+        
+        0 0 ZigBee Cluster Library Version N 
+        1 1 Application Version N 
+        2 2 Stack Version N 
+        3 3 Hardware Version N 
+        4 4 Manufacturer Name N 
+        5 5 Model Identifier N 
+        6 6 Date Code N 
+        7 7 Power Source N 
+        16 10 Location Description Y 
+        18 12 Device Enabled N 
+
+8.2 On/Off Cluster 
+    Cluster ID:         0x0006 (6) 
+    Manufacturer ID:    0x0000 (0) 
+        
+        Standard ‘turn on’, ‘turn off’, and ‘toggle’ functionality is provided by the On/Off Cluster. 
+
+        Attr ID, Attr ID (Hex), Attribute Name, Writeable.
+        0 0 Switch State N 
+        
+8.3 Simple Metering Cluster 
+    Cluster ID:         0x0702 (1794) 
+    Manufacturer ID:    0x0000 (0) 
+    
+    Saturn South devices expose an expanded set of attributes in a non-standard range within the Simple Metering Cluster. 
+
+    Attr ID, Attr ID (Hex), Attribute Name, Units, Divisor, Writeable.
+    
+    57610 e10a Voltage 1 RMS Mean                   "V"     100 N 
+    57628 e11c Current 1 RMS Mean                   "A"     100 N 
+    57646 e12e Power 1 Active Mean                  "W"     1 N 
+    57649 e131 Power 1 Reactive Mean                "var"   1 N 
+    57655 e137 Power Factor 1 Mean                          1000 N 
+    57664 e140 Accumulated Energy 1 Active Import   "Wh"    1 N 
+    57665 e141 Accumulated Energy 1 Reactive Import "varh"  1 N 
+    57667 e143 Frequency 1 Mean                     "Hz"    100 N 
+    57676 e14c Temperature 1 Mean                   "C"     100 N 
+    57721 e179 Accumulated Energy 1 Active Export   "Wh"    1 N 
+    57722 e17a Accumulated Energy 1 Reactive Export "varh"  1 N         
+        
+        
+        
+switch.saturn_south_ss9007_2_0_5977_2290_ssha_a32a10b0_on_off        
