@@ -46,3 +46,6 @@ Idealy, handle the data in such a way that mutiple ES boxes with mutiple meters 
 See file, raw Json for a output of the script, and a raw JSON message.
 Twisted_server is original example from manuafacutre.
 Test_server is what i am attemping to make work.
+
+working script in writetodb.py
+
