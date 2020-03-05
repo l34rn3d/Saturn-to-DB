@@ -27,8 +27,8 @@ SERVER_PORT = 8081
 #---------------------------------------------------------------------------# 
 
 
-influx_client = InfluxDBClient('10.3.10.8', '8086', 'powerlog', 'powerlog', 'powerlog')
-#influx_client = InfluxDBClient('cred.IP', '8086', 'cred.USER', 'cred.PWD', 'cred.DB')
+
+influx_client = InfluxDBClient('cred.IP', '8086', 'cred.USER', 'cred.PWD', 'cred.DB')
 #influx_client = DataFrameClient('IP', 'port', 'USER', 'PWD', 'DB')
 
 PROTOCOL_VERSION = "1.1"
